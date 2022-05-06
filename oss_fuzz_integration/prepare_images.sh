@@ -27,7 +27,8 @@ fi
 echo 'Setting up docker images'
 
 docker pull gcr.io/oss-fuzz-base/base-clang:introspector
-docker pull gcr.io/oss-fuzz-base/base-builder:introspector
+#docker pull gcr.io/oss-fuzz-base/base-builder:introspector
+docker build -t gcr.io/oss-fuzz-base/base-builder:introspector oss-fuzz/infra/base-images/base-builder/
 docker pull gcr.io/oss-fuzz-base/base-runner
 docker tag gcr.io/oss-fuzz-base/base-builder:introspector gcr.io/oss-fuzz-base/base-builder:latest
 docker tag gcr.io/oss-fuzz-base/base-clang:introspector gcr.io/oss-fuzz-base/base-clang:latest
